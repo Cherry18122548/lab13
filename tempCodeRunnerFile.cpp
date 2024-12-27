@@ -20,40 +20,39 @@ int main(){
     return 0;
 }
 
-void stat(const double A[],int N,double B[]){
-    double sum=0;
-    double mean;
-    for(int i=0;i < N; i++){
-        sum = sum + A[i];
-        mean = sum/N;
-        B[0] = mean;
+void stat(const double A[], int N, double B[]){
+    double sum = 0;
+    for(int i = 0; i < N; i++){
+        sum += A[i];
     }
-    double stan;
-    for(int i=0;i < N; i++){
-        stan += pow(A[i]-mean,2);
-    }
-    B[1]=sqrt(stan/N);
+    double mean = sum / N;
+    B[0] = mean;
 
-    double Geo;
-    for(int i=0;i < N; i++){
-        Geo += pow(product, 1.0);
+    double stan = 0;
+    for(int i = 0; i < N; i++){
+        stan += pow(A[i] - mean, 2);
     }
-    B[2]=Geo/N;
+    B[1] = sqrt(stan / N);
 
-    double HarmonicMean;
-    for(int i=0;i < N; i++){
-        HarmonicMean += 1.0 / N;
+    double product = 1;
+    for(int i = 0; i < N; i++){
+        product *= A[i];
     }
-    B[3]= N / HarmonicMean;
+    B[2] = pow(product, 1.0 / N);
 
-    double max;
-    double min;
-    for (int i = 1; i < n; i++) {
-        if (A[i] > max) {
-            max[] = B4[i];
-        }
-        if (A[i] < min) {
-            min[] = B5[i];
-        }
+    double sumHM = 0;
+    for(int i = 0; i < N; i++){
+        sumHM += 1.0 / A[i];
+    }
+    B[3] = N / sumHM;
+
+    double maxVal = A[0], minVal = A[0];
+    for(int i = 1; i < N; i++){
+        if(A[i] > maxVal) 
+            maxVal = A[i];
+        if(A[i] < minVal) 
+            minVal = A[i];
+    }
+    B[4] = maxVal;
+    B[5] = minVal;
 }
-
