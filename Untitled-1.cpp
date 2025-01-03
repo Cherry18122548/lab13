@@ -8,25 +8,25 @@ int main(){
 	
 	string name[N];
 	int age[N];
-	int i=0;
-	while(i>N){
-	cout << "Name of student "<< N+1 << "=";
-	cin >> name[i];
-	cout << "Age of student " << N+1 << "=";
-	cin >> age[i];
-	i++;
-	}
+	int i = 0;
+	while(N > i){
+        cout << "Name of student "<< i+1 << "=";
+        cin >> name[i];
+        cout << "Age of student " << i+1 << "=";
+        cin >> age[i];
+        i++;
+	    }
 	int key;
 	cout << "--------------------------------------\n";
 	cout << "Enter an age to search: ";
 	cin >> key;
 	cout << "--------------------------------------\n";
 	int j=0;
-	while(j<0){
-	    if(age[i]==key){
-	        cout << name[i] ;
+	while(j<N){
+	    if(age[j] == key){
+	        cout << name[j] ;
 	    }
-	    i++;
+	    j++;
 	}
 	cout << "--------------------------------------\n";
 	
